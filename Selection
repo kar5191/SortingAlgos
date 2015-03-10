@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+void selsort(int ar[], int n)
+{
+	int imin=0;
+	int temp=0;
+	for(int i=0;i<n-1;i++)
+	{
+		imin=i;
+		for(int j=i+1;j<n;j++)
+		{
+			if(ar[j]<ar[imin])
+			{
+				imin=j;
+				
+			}
+		}
+		
+		temp=ar[i];
+		ar[i]=ar[imin];
+		ar[imin]=temp;
+		
+	}
+}
+
+int main() {
+	// your code goes here
+	int ar[5]={4,2,7,1,3};
+	selsort(ar,5);
+	for(int k=0;k<5;k++)
+	cout<<ar[k];
+	return 0;
+}
+
+
