@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+void insertion(int a[])
+{
+	int key=0;
+	int j=0;
+	int temp=0;
+	for(int i=1;i<8;i++)
+	{
+		key=a[i];
+	    j=i-1;
+	    while(j>=0 && key<a[j])
+	    {
+	    	a[j+1]=a[j];
+	    	j--;
+	    }
+	    
+	    a[++j]=key;
+	}
+	
+	for(int k=0;k<8;k++)
+	cout<<a[k];
+}
+int main() {
+	// your code goes here
+	int a[8]={4,9,1,5,6,3,2,7};
+	insertion(a);
+	return 0;
+}
+
